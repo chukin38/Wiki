@@ -1,0 +1,65 @@
+数据分析领域全球Top实验室洞察——UIUC Data and Information Systems(DAIS Lab)
+摘要
+本文重点分析了伊利诺伊大学香槟分校(UIUC)计算机科学系的DAIS Lab在人工智能和数据分析领域的研究成果。重点关注了当前的热点研究内容的项目以及和华为云数据域业务相关的技术难点。
+自由讨论详情
+UIUC——Data and Information Systems(DAIS Lab)
+研究领域：信息检索、数据挖掘、数据库系统、机器学习等领域
+团队情况：9个细分领域的Group（1.Banerjee’s Group、2.BLENDER Lab、3.Create Lab、4.Crowd Dynamics Lab、5.Data Mining Research Group、6.IDEA Lab、7.iSAIL Lab、8.SUN Lab、9.TIMAN Group），一共17位教授
+合作情况：IBM：数据管理；Microsoft：机器学习算法；google：信息检索系统；AWS：NLP；Facebook：社交网络分析工具；思科：物联网系统等
+
+ 
+实验室与工业界合作
+2003-2010: 集中在数据挖掘领域。该实验室开发了多种数据挖掘算法，用于谷歌搜索、亚马逊商城的推荐系统等产品。
+2010-2015: 扩展到自然语言处理、计算机视觉等领域。该实验室开发了自然语言处理工具，用于微软翻译、Cortana语音助手、脸书新闻源算法等产品。
+2015-2020: 扩展到机器学习、人工智能等领域。该实验室开发了机器学习算法，用于IBM Watson认知计算平台、阿里巴巴的阿里云ML平台、腾讯的QQ音乐、微信朋友圈等产品。
+2020至今: DAIS Lab与工业界的合作更加深入，并开始探索数据科学、物联网、区块链等新兴领域。
+ 
+下面重点分析下DAIS Lab下面的和AI4data、Data4AI相关度比较高的2个小组的研究。
+1、UIUC——Data and Information Systems(Data Mining Research Group) 
+研究领域：从海量非结构化文本数据中挖掘结构、时空和社交媒体数据的多维结构化、汇总和挖掘、生物文本挖掘用于生物网络的构建和挖掘
+团队情况：leader by Jiawei Han，2位博后、11位博士、4位轮转/访问博士、9位硕士生等
+团队成就：24年23篇paper；23年72篇paper；22年71篇paper；21年64篇paper；20年83篇paper
+
+重点项目分析：
+Paper 1：Graph Chain-of-Thought: Augmenting Large Language Models by Reasoning on Graphs
+目标：利用结构化知识源缓解LLM幻觉问题，LLMs可以基于图进行链式推理，找到关键信息，通过图结构增强LLM的知识理解和推理能力。
+挑战：现有的工作建议用外部文本语料库作为知识源来增强LLM，并将每个文档视为一个知识单元。然而，在现实场景中，文本单元通常是互连的，形成（文本属性）图。
+方案：GRAPH-COT框架：LLM推理、LLM与图的交互以及图的执行。 GRBENCH数据集：图推理基准数据集，包含1740个问题，这些问题可以通过10个领域图的知识来回答。
+   
+Paper 2：Don’t Make Your LLM an Evaluation Benchmark Cheater
+目标：大模型结果可靠性评估：构建可靠的评估基准来测试LLMs在各任务中的能力
+挑战：模型训练中使用了与评估集相关或相同的数据，这可能导致评估结果的提升。基准泄露可以显著提高评估性能，即使是较小的模型也能在某些任务上超越更大的模型。
+方案：改进LLMs的评估，包括使用更广泛的基准、进行数据去污染检查、报告详细的预训练数据组成等。
+   
+Paper 3：Tuning Language Models as Training Data Generators for Augmentation-Enhanced Few-Shot Learning
+目标：Data4LLM：利用数据增强来提升小样本学习（Few-Shot Learning）的性能
+挑战： PLMs的小样本方法和监督训练相比仍然存在较大差距
+方案：1）微调生成器： 使用PLM对小样本数据进行微调，以获得生成器的模型参数。2）合成训练数据： 使用生成器合成大量新的训练样本，并将其与原始训练集进行扩充。3）训练分类器： 在扩充后的训练集上对分类PLM进行微调，以获得最终的模型。
+   
+Data Mining Research Group洞察结论：文本挖掘方向TOP实验室，近期Data4LLM研究方向前沿，后续重点关注
+ 
+2、UIUC——Data and Information Systems(BLENDER Lab) 
+研究领域：基础IE、跨媒体IE、大语言模型、跨文档IE、低资源语言NLP、跨类型IE、跨域IE、自然语言生成、科学人工智能
+团队情况：leader by Heng ji，2位博后、18位博士、4位轮转/访问博士、3位硕士生等
+团队成就： 24年41篇paper；23年91篇paper；22年58篇paper；21年55篇paper；20年30篇paper
+重点项目分析：
+Paper 1：Persona-DB: Efficient Large Language Model Personalization for Response Prediction with Collaborative Data Refinement
+目标：优化数据表示实现高效检索，提高LLMs在个性化交互中的效率和准确性，特别是在用户数据稀疏或上下文有限的情况下。
+挑战：现有RAG方法主要集中在增强检索阶段，忽略了数据库质量方面存在局限性
+方案：Persona-DB框架：(1) 通过提炼和扩展用户数据来创建数据库，形成更泛化的人格构建；(2) 通过JOIN操作连接相关数据库，填补用户间的知识差距。
+   
+Paper 2：MINT: Evaluating LLMs in Multi-turn Interaction with Tools and Language Feedback
+目标：LLM在多轮交互方面的能力的有效评估
+挑战：现有的工作的评估往往强调单轮交换的基准性能，忽略了用户、LLM和外部工具之间的交互，以及来自用户的自然语言反馈的重要性。
+方案：MINT评估框架：通过使用工具和利用自然语言反馈来评估LLM在多轮交互中的任务解决能力（重点关注推理、编码和决策）
+   
+近期实验室在LLM Agent上也有研究：Executable Code Actions Elicit Better LLM Agents。实验室的老本行是多模态IE（多语言、多媒体、低资源、多任务、跨领域），罗列一些重点产出：
+•ViStruct：有效提取视觉结构知识的VLMs训练框架 (EMNLP2023)
+•PAXION：视频-语言基础模型（VidLMs）理解动作知识(NeurIPS2023)
+•DeepMaven：利用多媒体知识提取和合成对远距离影视节目视频进行深度问答（EACL2023）
+•MuMuQA：通过跨媒体知识提取和基础的多媒体多跳新闻问答（AAAI2022）
+•OneIE：具有全局特征的信息提取联合神经模型
+•GAIA：细粒度多媒体知识提取系统
+•RESIN：模式引导的跨文档跨语言跨媒体信息提取和事件跟踪系统
+BLENDER Lab洞察结论：多模态IE方向的Top实验室，近期LLM Agent、RAG、大模型可信等方向前沿，后续重点关注
+
